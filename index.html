@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Animated Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="navbar">
+            <h2 class="logo"><a href="https://www.youtube.com/@Nonymouz" title="Nonymouz YT" target="_blank" class="link">Nonymouz</a></h2>
+            <button type="button" id="sign">Sign Up</button>
+        </div>
+        <div class="content">
+            <small>Welcome to </small>
+            <h1>Zaid's <br>Creative Studio</h1>
+            <button type="button">Take a tour</button>
+        </div>
+        <div class="side-bar">
+            <img src="images/menu.png" class="menu">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/justnonymouz/" target="_blank"><img title="Instagram" src="images/ig.png"></a>
+                    <div class="yt"><a href="https://www.youtube.com/@subtleguys" target="_blank"><img title="Subtle Guys YT" src="images/dc4LABqni.png"></a></div>
+                </div>
+                <div class="useful-links">
+                    <a href="" id="sharebtn"><img title="Share" src="images/share.png"></a>
+                    <a title="GitHub" href="https://github.com/Mzaidprof" target="_blank"><img src="images/info.png"></a>
+                </div>
+        </div>
+
+        <div class="bubbles">
+            <img src="images/bubble.png">
+            <img src="images/bubble.png">
+            <img src="images/bubble.png">
+            <img src="images/bubble.png">
+            <img src="images/bubble.png">
+            <img src="images/bubble.png">
+            <img src="images/bubble.png">
+        </div>
+    </div>
+</body>
+
+<script>
+
+    const sharebtn = document.getElementById("sharebtn");
+
+    function sharepage() {
+        let link = window.location.href;
+        sharebtn.setAttribute("href", link); // Set the href attribute correctly
+
+        let copyLink = document.createElement("textarea"); // Create a temporary textarea element
+        copyLink.value = link; // Set its value to the link
+        document.body.appendChild(copyLink); // Append it to the document body
+        copyLink.select(); // Select its content
+        document.execCommand("copy"); // Execute the copy command
+        document.body.removeChild(copyLink); // Remove the temporary textarea element
+
+        // Provide feedback (optional)
+        alert("Link copied to clipboard: " + link);
+    }
+
+    sharepage();
+
+</script>
+
+</html>
